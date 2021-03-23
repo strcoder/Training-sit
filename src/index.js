@@ -21,7 +21,7 @@ console.log('====================================');
  * @returns {NUMBER} sum values in an array
 */
 const sumNumbersInArray = (arr) => {
-  return arr.reduce((a, b) => a + b); // Function to reduce the array to a single value
+  return arr.reduce((a, b) => a + b, 0); // Function to reduce the array to a single value
 }
 
 console.log('====================================');
