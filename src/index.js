@@ -34,13 +34,34 @@ console.log('====================================');
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// /**
+//  * Function to determine century by the year entered with floor
+//  * @param {NUMBER} year
+//  * @returns {NUMBER} century
+// */
+// const centuryFromYear = (year) => {
+//   const century = Math.floor((year - 1) / 100) + 1
+//   console.log(century);
+//   return century;
+// }
+
+// console.log('====================================');
+// console.log('Año a siglo');
+// centuryFromYear(1901); //ouput 20
+// centuryFromYear(2325); //ouput 24
+// centuryFromYear(2001); //ouput 21
+// centuryFromYear(9); //ouput 1
+// console.log('====================================');
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 /**
- * Function to determine century by the year entered
+ * Function to determine century by the year entered with ceil
  * @param {NUMBER} year
  * @returns {NUMBER} century
 */
 const centuryFromYear = (year) => {
-  const century = Math.floor((year - 1) / 100) + 1
+  const century = Math.ceil((year) / 100);
   console.log(century);
   return century;
 }
