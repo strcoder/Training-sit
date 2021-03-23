@@ -108,37 +108,49 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// /**
+//  * La funcion reliza un filtrado de los objetos dentro de la colleccion de acuerdo a la variable edad que recibe
+//  * y si la edad dentro del objeto es mayor o igual que la edad entonces se guardara para ser retornada en una nueva lista
+//  * Para que la funcion ralice la operacion necesitara una array de objetos los cueles tengan un atributo de edad
+//  * @param {ARRAY} coleccion
+//  * @param {NUMBER} edad
+//  * @returns {ARRAY}
+//  */
+// function filtraPorEdad(coleccion, edad) {
+//   return coleccion.filter(item => {
+//     return item.edad >= edad;
+//   });
+// }
+
+// const collection = [
+//   {
+//     edad: 10,
+//     nombre: 'pepito',
+//   },
+//   {
+//     edad: 12,
+//     nombre: 'susana',
+//   },
+//   {
+//     edad: 21,
+//     nombre: 'jose',
+//   },
+//   {
+//     edad: 20,
+//     nombre: 'sofia',
+//   },
+// ];
+
+// console.log(filtraPorEdad(collection, 18));
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 /**
- * La funcion reliza un filtrado de los objetos dentro de la colleccion de acuerdo a la variable edad que recibe
- * y si la edad dentro del objeto es mayor o igual que la edad entonces se guardara para ser retornada en una nueva lista
- * Para que la funcion ralice la operacion necesitara una array de objetos los cueles tengan un atributo de edad
- * @param {ARRAY} coleccion
- * @param {NUMBER} edad
- * @returns {ARRAY}
+ * Esta funcion aplica el concepto de currying para separar paramentros en funciones es decir que solo se pide un parametro
+ * por funcion, aunque en este caso la primer funcion fallaria en la separacion ya que se piden dos parametros
+ * Y lo que realiza la funcion es simplemente la suma de las variables a, b, c y d
  */
-function filtraPorEdad(coleccion, edad) {
-  return coleccion.filter(item => {
-    return item.edad >= edad;
-  });
-}
+const foo = (a, b) => (c) => (d) => a + b + c + d;
 
-const collection = [
-  {
-    edad: 10,
-    nombre: 'pepito',
-  },
-  {
-    edad: 12,
-    nombre: 'susana',
-  },
-  {
-    edad: 21,
-    nombre: 'jose',
-  },
-  {
-    edad: 20,
-    nombre: 'sofia',
-  },
-];
-
-console.log(filtraPorEdad(collection, 18));
+// Muestra de coo ejecutar la funcion
+console.log(foo(1, 1)(1)(1));
