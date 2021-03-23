@@ -11,7 +11,7 @@
 // console.log(sum(1,10)); //output 11
 // console.log(sum(10,30)); //output 40
 
-//////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // /**
 //  * Function to sum values in an array with Array.prototype.reduce()
@@ -27,7 +27,7 @@
 // console.log(sum([1,2,3,4,5])); //output 15
 // console.log(sum([1,2,3])); //output 6
 
-//////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // /**
 //  * Function to determine century by the year entered
@@ -45,12 +45,31 @@
 // centuryFromYear(2001); //ouput 21
 // centuryFromYear(9); //ouput 1
 
-//////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Esta es una funcion que regresa el residuo de determinado numero con su determinado divisor
-// Aqui se aplica el concepto de currying ya que se son dos funciones que reciben un solo argumento en vez
-// de una sola funcion que reciba dos argumentos
-let divisible = mod => num => num % mod;
+// // Esta es una funcion que regresa el residuo de determinado numero con su determinado divisor
+// // Aqui se aplica el concepto de currying ya que se son dos funciones que reciben un solo argumento en vez
+// // de una sola funcion que reciba dos argumentos
+// let divisible = mod => num => num % mod;
 
-// Aqui se muestra la manera de llamar dicha funcion
-console.log(divisible(5)(44));
+// // Aqui se muestra la manera de llamar dicha funcion
+// console.log(divisible(5)(44));
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// ¿Qué pasa con este código?, ¿Qué imprime la consola?, ¿error? ¿100? ¿undefined?  /
+// En esta codigo se declara una funcion la cual retorna la variable a, dicha variable es declarada
+// consecuentemente a la funcion con un valor de 10 y al final se hace el llamado de la funcion para imprimir el valor de a
+// En este caso como la variable se declara antes de que la funcion sea ejecutada, la variable se en el entorno de ejecucion
+// y puede se accedida por la funcion en el caso de que la variable fuera declarada despues del llamado de la funcion
+// al momento de ejecutar daria un error
+function foo() {
+  return a;
+}
+
+let a = 100;
+
+console.log(foo()); // output 100
+// let a = 100; // Declarandola despues de llamar a la funcion daria error
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
