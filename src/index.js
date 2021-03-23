@@ -57,19 +57,51 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// ¿Qué pasa con este código?, ¿Qué imprime la consola?, ¿error? ¿100? ¿undefined?  /
-// En esta codigo se declara una funcion la cual retorna la variable a, dicha variable es declarada
-// consecuentemente a la funcion con un valor de 10 y al final se hace el llamado de la funcion para imprimir el valor de a
-// En este caso como la variable se declara antes de que la funcion sea ejecutada, la variable se en el entorno de ejecucion
-// y puede se accedida por la funcion en el caso de que la variable fuera declarada despues del llamado de la funcion
-// al momento de ejecutar daria un error
-function foo() {
-  return a;
-}
+// // ¿Qué pasa con este código?, ¿Qué imprime la consola?, ¿error? ¿100? ¿undefined?  /
+// // En esta codigo se declara una funcion la cual retorna la variable a, dicha variable es declarada
+// // consecuentemente a la funcion con un valor de 10 y al final se hace el llamado de la funcion para imprimir el valor de a
+// // En este caso como la variable se declara antes de que la funcion sea ejecutada, la variable se en el entorno de ejecucion
+// // y puede se accedida por la funcion en el caso de que la variable fuera declarada despues del llamado de la funcion
+// // al momento de ejecutar daria un error
+// function foo() {
+//   return a;
+// }
 
-let a = 100;
+// let a = 100;
 
-console.log(foo()); // output 100
-// let a = 100; // Declarandola despues de llamar a la funcion daria error
+// console.log(foo()); // output 100
+// // let a = 100; // Declarandola despues de llamar a la funcion daria error
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Function to validate if the value is palindrome
+ * @param {STRING} value
+ * @returns {BOOLEAN} if value is palindrome return true
+*/
+const isPalindrome = (value) => {
+  const aux = value.replace(/ /g, '').toLowerCase(); // Delete spaces and transform to lower case
+  // (split) Transform to array,
+  // (reverse) Invert the array,
+  // (join) Transform to string,
+  // (replace) Delete spaces,
+  // (toLowerCase) Transform to lower case,
+  const backward = value.split('').reverse().join('').replace(/ /g, '').toLowerCase();
+
+  if (aux === backward) {
+    return true
+  }
+  return false
+}
+
+console.log(isPalindrome('oro')); // output = true;
+console.log(isPalindrome('reconocer')); // output = true;
+console.log(isPalindrome('sometamos')); // output = false;
+console.log(isPalindrome('animal')); // output = false;
+console.log(isPalindrome('animal a lamina')); // output = true;
+console.log(isPalindrome('1234567890987654321')); // output = true;
+// segunda parte
+console.log('--------------------------------------------');
+console.log(isPalindrome('Al reparto sacas otra perla')); // output = true;
+console.log(isPalindrome('Allí vez Sevilla')); // output = false;
+console.log(isPalindrome('Asi revelara su amada dama usar aleve risa')); // output = true;
