@@ -29,18 +29,28 @@
 
 //////////////////////////////////////////////////////////////////////
 
-/**
- * Function to determine century by the year entered
- * @param {NUMBER} year
- * @returns {NUMBER} century
-*/
-const centuryFromYear = (year) => {
-  const century = Math.floor((year - 1) / 100) + 1
-  console.log(century);
-  return century;
-}
+// /**
+//  * Function to determine century by the year entered
+//  * @param {NUMBER} year
+//  * @returns {NUMBER} century
+// */
+// const centuryFromYear = (year) => {
+//   const century = Math.floor((year - 1) / 100) + 1
+//   console.log(century);
+//   return century;
+// }
 
-centuryFromYear(1901); //ouput 20
-centuryFromYear(2325); //ouput 24
-centuryFromYear(2001); //ouput 21
-centuryFromYear(9); //ouput 1
+// centuryFromYear(1901); //ouput 20
+// centuryFromYear(2325); //ouput 24
+// centuryFromYear(2001); //ouput 21
+// centuryFromYear(9); //ouput 1
+
+//////////////////////////////////////////////////////////////////////
+
+// Esta es una funcion que regresa el residuo de determinado numero con su determinado divisor
+// Aqui se aplica el concepto de currying ya que se son dos funciones que reciben un solo argumento en vez
+// de una sola funcion que reciba dos argumentos
+let divisible = mod => num => num % mod;
+
+// Aqui se muestra la manera de llamar dicha funcion
+console.log(divisible(5)(44));
