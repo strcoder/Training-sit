@@ -153,7 +153,7 @@ console.log('====================================');
  * @param {ARRAY} coleccion
  * @param {NUMBER} edad
  * @returns {ARRAY}
- */
+*/
 function filtraPorEdad(coleccion, edad) {
   return coleccion.filter(item => {
     return item.edad >= edad;
@@ -182,6 +182,39 @@ const collection = [
 console.log('====================================');
 console.log('Filter by age');
 console.log(filtraPorEdad(collection, 18));
+console.log('====================================');
+
+/**
+ * Function to add property habilitado on true
+ * @param {ARRAY} arr
+ * @returns {ARRAY} new array with objects with property habilitado
+*/
+const marcarHabilitados = (arr) => {
+  const aux = arr.map((item) => {
+    const newObject = { ... item };
+    newObject.habilitado = true;
+    return newObject;
+  });
+
+  return aux;
+}
+
+let arr = [
+  { nombre: 'Mauricio', edad: 10},
+  {nombre: 'Benjamín', edad: 20},
+  {nombre: 'Astrid', edad: 17},
+  {nombre: 'Angélica', edad: 19}
+];
+
+let edad = 18;
+
+let filterArr = filtraPorEdad(arr, edad);
+
+let habArr = marcarHabilitados(filterArr);
+
+console.log('====================================');
+console.log('Filtrado segunda parte');
+console.log(habArr);
 console.log('====================================');
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
