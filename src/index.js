@@ -74,34 +74,71 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/**
- * Function to validate if the value is palindrome
- * @param {STRING} value
- * @returns {BOOLEAN} if value is palindrome return true
-*/
-const isPalindrome = (value) => {
-  const aux = value.replace(/ /g, '').toLowerCase(); // Delete spaces and transform to lower case
-  // (split) Transform to array,
-  // (reverse) Invert the array,
-  // (join) Transform to string,
-  // (replace) Delete spaces,
-  // (toLowerCase) Transform to lower case,
-  const backward = value.split('').reverse().join('').replace(/ /g, '').toLowerCase();
+// /**
+//  * Function to validate if the value is palindrome
+//  * @param {STRING} value
+//  * @returns {BOOLEAN} if value is palindrome return true
+// */
+// const isPalindrome = (value) => {
+//   const aux = value.replace(/ /g, '').toLowerCase(); // Delete spaces and transform to lower case
+//   // (split) Transform to array,
+//   // (reverse) Invert the array,
+//   // (join) Transform to string,
+//   // (replace) Delete spaces,
+//   // (toLowerCase) Transform to lower case,
+//   const backward = value.split('').reverse().join('').replace(/ /g, '').toLowerCase();
 
-  if (aux === backward) {
-    return true
-  }
-  return false
+//   if (aux === backward) {
+//     return true
+//   }
+//   return false
+// }
+
+// console.log(isPalindrome('oro')); // output = true;
+// console.log(isPalindrome('reconocer')); // output = true;
+// console.log(isPalindrome('sometamos')); // output = false;
+// console.log(isPalindrome('animal')); // output = false;
+// console.log(isPalindrome('animal a lamina')); // output = true;
+// console.log(isPalindrome('1234567890987654321')); // output = true;
+// // segunda parte
+// console.log('--------------------------------------------');
+// console.log(isPalindrome('Al reparto sacas otra perla')); // output = true;
+// console.log(isPalindrome('Allí vez Sevilla')); // output = false;
+// console.log(isPalindrome('Asi revelara su amada dama usar aleve risa')); // output = true;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * La funcion reliza un filtrado de los objetos dentro de la colleccion de acuerdo a la variable edad que recibe
+ * y si la edad dentro del objeto es mayor o igual que la edad entonces se guardara para ser retornada en una nueva lista
+ * Para que la funcion ralice la operacion necesitara una array de objetos los cueles tengan un atributo de edad
+ * @param {ARRAY} coleccion
+ * @param {NUMBER} edad
+ * @returns {ARRAY}
+ */
+function filtraPorEdad(coleccion, edad) {
+  return coleccion.filter(item => {
+    return item.edad >= edad;
+  });
 }
 
-console.log(isPalindrome('oro')); // output = true;
-console.log(isPalindrome('reconocer')); // output = true;
-console.log(isPalindrome('sometamos')); // output = false;
-console.log(isPalindrome('animal')); // output = false;
-console.log(isPalindrome('animal a lamina')); // output = true;
-console.log(isPalindrome('1234567890987654321')); // output = true;
-// segunda parte
-console.log('--------------------------------------------');
-console.log(isPalindrome('Al reparto sacas otra perla')); // output = true;
-console.log(isPalindrome('Allí vez Sevilla')); // output = false;
-console.log(isPalindrome('Asi revelara su amada dama usar aleve risa')); // output = true;
+const collection = [
+  {
+    edad: 10,
+    nombre: 'pepito',
+  },
+  {
+    edad: 12,
+    nombre: 'susana',
+  },
+  {
+    edad: 21,
+    nombre: 'jose',
+  },
+  {
+    edad: 20,
+    nombre: 'sofia',
+  },
+];
+
+console.log(filtraPorEdad(collection, 18));
